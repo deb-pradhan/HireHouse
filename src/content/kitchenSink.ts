@@ -1,0 +1,225 @@
+import type { Section } from "@/content/types";
+
+/** Kitchen-sink gallery — every archetype, one section each, in a valid
+ *  ground rotation (no adjacent same-ground; blue once at StatementB). */
+
+export const sinkSections: Section[] = [
+  {
+    kind: "hero-a",
+    ground: "black",
+    eyebrow: "HireHouse · Section library",
+    headline: "Every archetype, rendered live.",
+    descriptor:
+      "A gallery of the thirteen content-driven sections. Grounds rotate, lilac never grounds a band, and the single blue section lands at the ask.",
+    cta: { label: "Browse sections", href: "#c" },
+    secondaryCta: { label: "Return home", href: "/" },
+    metaLeft: "Design review · internal",
+    metaRight: "Phase 1 · library check",
+  },
+  {
+    kind: "stagger-c",
+    ground: "lime",
+    chips: ["Staggered columns"],
+    headline: "Pipes, process, or proof cards.",
+    cards: [
+      { title: "Parse.", body: "We read the thing properly and turn it into structured form." },
+      { title: "Rank.", body: "An honest score rates skill and fit, not exact keyword matches." },
+      { title: "Interview.", body: "A structured round with checks. Same questions, one fair bar." },
+      { title: "Decide.", body: "A human makes the final call, every single time." },
+    ],
+  },
+  {
+    kind: "scorecard-d",
+    ground: "white",
+    chips: ["Scorecard"],
+    headline: "A breakdown plus one summary.",
+    subline: "Hairline rows on the left, one accent panel on the right.",
+    rows: [
+      { label: "Speed", descriptor: "how fast we move", value: "72h" },
+      { label: "Visibility", descriptor: "who sees you", value: "Real" },
+      { label: "Prep", descriptor: "before the real one", value: "2 mocks" },
+      { label: "Feedback", descriptor: "written, kept", value: "Report" },
+      { label: "Second chance", descriptor: "matched again", value: "3 roles" },
+    ],
+    panel: {
+      ground: "blue",
+      label: "Summary",
+      bigStat: {
+        value: "$25",
+        label: "one-time fee",
+        real: true,
+        fallback: { value: "No fee", label: "free path stays" },
+      },
+      caption: "One number to carry the whole breakdown.",
+    },
+    footnote: "No placeholder numbers ship.",
+  },
+  {
+    kind: "grid-e",
+    ground: "black",
+    chips: ["Centred grid"],
+    headline: "Peer entities at equal weight.",
+    subline: "The only centred layout in the system.",
+    items: [
+      { numeral: "01", title: "One", body: "Kept to the same weight as its neighbours." },
+      { numeral: "02", title: "Two", body: "No single one gets promoted over the rest." },
+      { numeral: "03", title: "Three", body: "The count stays between three and five." },
+      { numeral: "04", title: "Four", body: "Numerals anchor each peer in place." },
+    ],
+  },
+  {
+    kind: "compare-f",
+    ground: "grey",
+    chips: ["Comparison"],
+    headline: "Two options across dimensions.",
+    dimensions: ["Cost", "Speed", "Evaluation"],
+    colA: {
+      label: "Standard",
+      cells: ["Free", "Queue-paced", "Same bar"],
+    },
+    colB: {
+      label: "Fast Track",
+      cells: ["$25 once", "72h review", "Same bar"],
+      ground: "blue",
+    },
+    closing: "Identical criteria. Paying buys speed and visibility, not a better score.",
+  },
+  {
+    kind: "bars-g",
+    ground: "black",
+    chips: ["Bleeding bars"],
+    headline: "A weighted, ranked list.",
+    bars: [
+      { title: "Step one.", valueLine: "first in the sequence", widthPct: 62 },
+      { title: "Step two.", valueLine: "next in the sequence", widthPct: 74 },
+      { title: "Step three.", valueLine: "longest right edge", widthPct: 86 },
+    ],
+    rightColumn: "Widths are set from content, never guessed.",
+    closing: { label: "See the full sequence", href: "#e" },
+  },
+  {
+    kind: "stat-row-h",
+    ground: "white",
+    chips: ["Stat row"],
+    headline: "Proof points, then a callout.",
+    stats: [
+      { value: "Proof one.", label: "A claim stated as construction, not a number." },
+      { value: "Proof two.", label: "The value is the hero; the label stays small." },
+      { value: "Proof three.", label: "Four across, then two, then one." },
+      { value: "Proof four.", label: "Nothing invented; everything stated." },
+    ],
+    callout: {
+      leadIn: "Lead-in phrase.",
+      body: "The callout carries the argument the tiles support.",
+    },
+  },
+  {
+    kind: "feature-i",
+    ground: "lime",
+    chips: ["Feature card"],
+    headline: "One stat, four reasons.",
+    featureCard: {
+      ground: "lilac",
+      bigStat: {
+        value: "One.",
+        label: "dominant point",
+        real: true,
+        fallback: { value: "One.", label: "dominant point" },
+      },
+      caption: "The mechanism the points depend on.",
+    },
+    items: [
+      { title: "Reason one.", body: "The first support, numbered." },
+      { title: "Reason two.", body: "The second support, numbered." },
+      { title: "Reason three.", body: "The third support, numbered." },
+      { title: "Reason four.", body: "The fourth support, numbered." },
+    ],
+    footnote: "Feature card is accent-only block, never a ground.",
+  },
+  {
+    kind: "tiers-j",
+    ground: "white",
+    chips: ["Three tiers"],
+    headline: "Nested quantities, staggered.",
+    leftStat: {
+      value: "3.",
+      label: "staggered panels",
+      real: true,
+      fallback: { value: "3.", label: "staggered panels" },
+    },
+    panels: [
+      { eyebrow: "Tier one", value: "Small.", caption: "The entry band, still counted." },
+      { eyebrow: "Tier two", value: "Middle.", caption: "The working band, still counted." },
+      { eyebrow: "Tier three", value: "Top.", caption: "The peak band, still counted." },
+    ],
+  },
+  {
+    kind: "dual-k",
+    variant: "lists",
+    ground: "grey",
+    chips: ["Dual list"],
+    headline: "Two lists of different kinds.",
+    left: {
+      label: "Plain rows",
+      rows: [
+        { name: "First row.", descriptor: "with a muted note", status: { label: "Live", live: true } },
+        { name: "Second row.", descriptor: "with a muted note" },
+        { name: "Third row.", descriptor: "with a muted note", status: { label: "Next" } },
+      ],
+    },
+    right: {
+      label: "Accent rows",
+      accent: "lime",
+      rows: [
+        { title: "First.", descriptor: "accent block" },
+        { title: "Second.", descriptor: "accent block" },
+        { title: "Third.", descriptor: "accent block" },
+      ],
+    },
+  },
+  {
+    kind: "contrast-l",
+    ground: "white",
+    chips: ["Contrast pair"],
+    headline: "Them and us, side by side.",
+    subline: "A fair pair, always equal weight.",
+    left: {
+      eyebrow: "The incumbent",
+      title: "The old way, stated plainly.",
+      body: "Never the greyed-out loser; a honest option on the table.",
+    },
+    right: {
+      eyebrow: "Ours",
+      title: "The new path, taken.",
+      body: "The accented option sits at equal visual weight.",
+      ground: "lime",
+    },
+    footnote: "Fairness holds: same weight, never demoted.",
+  },
+  {
+    kind: "statement-b",
+    ground: "blue",
+    chips: ["The Ask"],
+    headline: "The single blue section.",
+    subline: "This is the climax; the one ask per page.",
+    cards: [
+      { title: "One card.", body: "Flat black on blue, no gradients ever." },
+      { title: "Two card.", body: "At most two, never more." },
+    ],
+    primaryCta: { label: "Take the ask", href: "#m" },
+    secondaryCta: { label: "Skip the ask", href: "#m" },
+  },
+  {
+    kind: "closing-m",
+    ground: "white",
+    brandMark: "HireHouse",
+    headline: "That’s the library.",
+    descriptor: "Thirteen archetypes, each a sentence with terminal punctuation, each respecting the ground rules.",
+    contactGrid: [
+      { label: "Review", value: "Run the QA checklist per section." },
+      { label: "Ship", value: "npm run build must stay clean." },
+      { label: "Re-check", value: "Verify ground rotation in the DOM." },
+    ],
+    shapes: true,
+  },
+];

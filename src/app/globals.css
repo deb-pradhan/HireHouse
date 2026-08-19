@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Editorial Brutalist — web token layer
+   Mirrors docs/02-DESIGN-SYSTEM-WEB.md. This is the ONLY place
+   colors / type sizes are defined. Do not introduce hexes elsewhere.
+   ============================================================ */
+
+@theme {
+  /* structural grounds & ink */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-grey-bg: #e2e2e2;
+  --color-grey-block: #cfcfcf;
+
+  /* expressive accents (the five) */
+  --color-lime: #e9fea3;
+  --color-yellow: #fbfd78;
+  --color-lilac: #cb9fd2;
+  --color-blue: #4c49f3;
+
+  /* muted text roles */
+  --color-muted-dark: #9a9a9a; /* on black */
+  --color-muted-light: #555555; /* on light accents */
+  --color-label: #6b6b6b; /* field labels on white */
+
+  --font-sans: var(--font-manrope), "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --radius-card: 14px;
+  --radius-sm: 11px;
+}
+
+:root {
+  --margin: clamp(20px, 5vw, 63px);
+  --content: 1160px;
+  --band: clamp(64px, 10vh, 120px);
+
+  /* default accent = candidate */
+  --accent: var(--color-lime);
+  --accent-ink: var(--color-black);
+}
+
+[data-accent="candidate"] {
+  --accent: var(--color-lime);
+  --accent-ink: #000;
+}
+[data-accent="employer"] {
+  --accent: var(--color-blue);
+  --accent-ink: #fff;
+}
+[data-accent="institution"] {
+  --accent: var(--color-lilac);
+  --accent-ink: #000;
+}
+[data-accent="partner"] {
+  --accent: var(--color-yellow);
+  --accent-ink: #000;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    font-weight: 200;
+    background: var(--color-white);
+    color: var(--color-black);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* ------------------------------------------------------------
+   Typographic roles — clamp() fluid scale from the design system.
+   Applied via the typographic React components in
+   src/components/primitives. Never scatter raw font utilities.
+   ------------------------------------------------------------ */
+@layer components {
+  .t-wordmark {
+    font-weight: 700;
+    font-size: clamp(72px, 14vw, 133px);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    white-space: nowrap;
+  }
+  .t-hero {
+    font-weight: 700;
+    font-size: clamp(40px, 7vw, 57px);
+    line-height: 1;
+    letter-spacing: -0.07em;
+  }
+  .t-display {
+    font-weight: 700;
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+  .t-title {
+    font-weight: 200;
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .t-section {
+    font-weight: 200;
+    font-size: clamp(24px, 3.2vw, 34px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  .t-bar {
+    font-weight: 200;
+    font-size: clamp(18px, 2.4vw, 24px);
+    line-height: 1.07;
+    letter-spacing: -0.03em;
+  }
+  .t-lead {
+    font-weight: 300;
+    font-size: clamp(16px, 1.8vw, 18px);
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+  }
+  .t-chip {
+    font-weight: 300;
+    font-size: clamp(15px, 1.4vw, 17.8px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+  }
+  /* Card / panel title — chip size but WRAPS (chips never wrap). §5.2 */
+  .t-cardtitle {
+    font-weight: 300;
+    font-size: clamp(15px, 1.5vw, 17.8px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+  .t-name {
+    font-weight: 400;
+    font-size: clamp(14px, 1.3vw, 16px);
+    line-height: 1.5;
+    letter-spacing: -0.011em;
+  }
+  .t-body {
+    font-weight: 300;
+    font-size: clamp(15px, 1.2vw, 16px);
+    line-height: 1.4;
+    letter-spacing: -0.011em;
+  }
+  .t-caption {
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.5;
+    letter-spacing: -0.011em;
+  }
+  .t-micro {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.38;
+    letter-spacing: -0.005em;
+  }
+  .t-eyebrow {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Emphasis lead-in: bold the first phrase only (design rule §3.4). */
+  .lead-in {
+    font-weight: 700;
+  }
+
+  /* Call-to-action pills. Accent = filled with the route accent; ghost = hairline. */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 44px;
+    padding-inline: 20px;
+    border-radius: 999px;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    transition:
+      background-color 120ms ease,
+      color 120ms ease,
+      border-color 120ms ease;
+  }
+  .cta-accent {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  .cta-accent:hover {
+    background: var(--accent-ink);
+    color: var(--accent);
+  }
+  .cta-ghost {
+    background: transparent;
+    border: 1px solid currentColor;
+  }
+  .cta-ghost:hover {
+    background: currentColor;
+  }
+  /* ghost text flips to the ground color on hover via mix; handled per-ground below */
+  .on-dark .cta-ghost:hover {
+    color: #000;
+  }
+  .on-light .cta-ghost:hover {
+    color: #fff;
+  }
+}
+
+/* ------------------------------------------------------------
+   Utilities specific to the system
+   ------------------------------------------------------------ */
+@layer utilities {
+  /* clip-safe bleed: elements can run to the viewport edge without
+     ever producing horizontal page scroll. Section sets overflow-x-clip. */
+  .bleed-left {
+    margin-left: calc(var(--margin) * -1);
+  }
+  .below-fold {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
+}
