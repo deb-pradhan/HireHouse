@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Section } from "@/components/primitives/Section";
 import { Rule } from "@/components/primitives/Rule";
 import { Caption, Wordmark } from "@/components/primitives/Type";
-import { FOOTER, SITE } from "@/lib/site";
+import { FOOTER, SITE, SOCIAL } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -39,6 +39,23 @@ export function Footer() {
             </ul>
           </div>
         ))}
+      </div>
+
+      <div className="mt-12">
+        <p className="t-eyebrow text-muted-dark">Follow</p>
+        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          {SOCIAL.map((s) => (
+            <a
+              key={s.href}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="t-name opacity-70 transition-opacity hover:opacity-100"
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
       </div>
 
       <div className="mt-14">

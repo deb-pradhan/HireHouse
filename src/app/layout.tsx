@@ -5,7 +5,7 @@ import { Header } from "@/components/nav/Header";
 import { Footer } from "@/components/nav/Footer";
 import { Analytics } from "@/components/analytics/Analytics";
 import { ConsentBanner } from "@/components/analytics/ConsentBanner";
-import { SITE } from "@/lib/site";
+import { SITE, SOCIAL } from "@/lib/site";
 
 /** Manrope, self-hosted at build time by next/font (zero layout shift).
  *  200 (ExtraLight) is the workhorse; 700 for the heavier display texture. */
@@ -56,9 +56,22 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE.name,
+    url: "https://hirehouse.xyz",
+    description:
+      "AI hiring marketplace that reads every application on merit, runs a structured interview, and hands companies a shortlist. A product of Roni Analytics.",
+    sameAs: SOCIAL.map((s) => s.href),
+  };
   return (
     <html lang="en" className={manrope.variable}>
       <body data-accent="candidate">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-black focus:px-4 focus:py-2 focus:text-white"

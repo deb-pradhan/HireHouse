@@ -9,6 +9,15 @@ export const SITE = {
   tagline: "Hiring, decided on merit.",
 };
 
+/** Social profiles. Text links (design system is type-first, no icon logos);
+ *  also emitted as Organization `sameAs` for SEO. */
+export const SOCIAL = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/hirehouse" },
+  { label: "X", href: "https://x.com/hirehousexyz" },
+  { label: "Instagram", href: "https://www.instagram.com/p/DcO3mZ_k9Vz/" },
+  { label: "Facebook", href: "https://www.facebook.com/people/Hire-House/61593397282283/" },
+];
+
 /** Route → audience accent (palette-true mapping, docs/02 §1). */
 export const ROUTE_ACCENT: Record<string, Audience> = {
   "/": "candidate",
