@@ -7,9 +7,9 @@
 ## `/about` — Company
 
 ### 1. Statement — `<HeroA>` · white
-- **Eyebrow:** About · A product of Elyts
+- **Eyebrow:** About · A product of Roni Analytics
 - **Headline (h1):** Hiring should be decided on merit, not keywords.
-- **Descriptor:** HireHouse takes the slow, expensive top of the hiring funnel off companies' hands and gives candidates a fair, fast way to be seen. Built by Elyts, for the UAE and India.
+- **Descriptor:** HireHouse takes the slow, expensive top of the hiring funnel off companies' hands and gives candidates a fair, fast way to be seen. Built by Roni Analytics, for the UAE and India.
 
 ### 2. What / why — `<StaggerC>` · white
 - **Chips:** ["Why we built it"]
@@ -20,10 +20,10 @@
   3. **For institutions.** Whole batches interview-ready, with a clear readiness picture.
   4. **The rule.** Merit decides. Speed can be bought; a better score cannot.
 
-### 3. Elyts — `<ClosingM>` · black
-- **Headline (Hero):** Built by Elyts.
-- **Descriptor:** HireHouse and MockHouse are products of Elyts. Learn more at elyts.in.
-- **Contact grid:** Parent company · Elyts (elyts.in) · Markets · UAE & India · Products · HireHouse, MockHouse, Fast Track · Contact · `/contact`
+### 3. Roni Analytics — `<ClosingM>` · black
+- **Headline (Hero):** Built by Roni Analytics.
+- **Descriptor:** HireHouse and MockHouse are products of Roni Analytics.
+- **Contact grid:** Parent company · Roni Analytics · Markets · UAE & India · Products · HireHouse, MockHouse, Fast Track · Contact · `/contact`
 - **Note:** Team, funding, and metrics — to be added as they're confirmed. (No placeholder bios or numbers.)
 
 ---

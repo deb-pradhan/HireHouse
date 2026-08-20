@@ -8,10 +8,10 @@ export const aboutSections: Section[] = [
   {
     kind: "hero-a",
     ground: "black",
-    eyebrow: "About · A product of Elyts",
+    eyebrow: "About · A product of Roni Analytics",
     headline: "Hiring should be decided on merit, not keywords.",
     descriptor:
-      "HireHouse takes the slow, expensive top of the hiring funnel off companies' hands and gives candidates a fair, fast way to be seen. Built by Elyts, for the UAE and India.",
+      "HireHouse takes the slow, expensive top of the hiring funnel off companies' hands and gives candidates a fair, fast way to be seen. Built by Roni Analytics, for the UAE and India.",
     metaLeft: "Merit decides. Always.",
     metaRight: "UAE · India",
   },
@@ -42,12 +42,12 @@ export const aboutSections: Section[] = [
   {
     kind: "closing-m",
     ground: "black",
-    brandMark: "Elyts",
-    headline: "Built by Elyts.",
+    brandMark: "Roni Analytics",
+    headline: "Built by Roni Analytics.",
     descriptor:
-      "HireHouse and MockHouse are products of Elyts. Learn more at elyts.in. Team, funding, and metrics will be added as they are confirmed, with no placeholder bios or numbers.",
+      "HireHouse and MockHouse are products of Roni Analytics. Team, funding, and metrics will be added as they are confirmed, with no placeholder bios or numbers.",
     contactGrid: [
-      { label: "Parent company", value: "Elyts · elyts.in" },
+      { label: "Parent company", value: "Roni Analytics" },
       { label: "Markets", value: "UAE & India" },
       { label: "Products", value: "HireHouse, MockHouse, Fast Track" },
       { label: "Contact", value: "hirehouse.xyz/contact" },

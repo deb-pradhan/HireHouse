@@ -13,7 +13,7 @@
 ├─ /institutions          Placement cells / TPOs                 institution (lilac)
 ├─ /mockhouse             Prep product (B2C + institution)       institution (lilac)
 ├─ /partners              Partner ladder + booking               partner (yellow)
-├─ /about                 Company / Elyts                        neutral
+├─ /about                 Company / Roni Analytics                        neutral
 ├─ /contact              Contact + routing to demo/partner      neutral
 └─ (legal)
     ├─ /privacy
@@ -34,9 +34,9 @@
 
 - Column 1 — Candidates: Home, Jobs, Fast Track, MockHouse
 - Column 2 — Business: Companies, Institutions, Partners
-- Column 3 — Company: About, Contact, Elyts (elyts.in)
+- Column 3 — Company: About, Contact, Roni Analytics
 - Column 4 — Legal: Privacy, Terms, Interview-recording consent
-- Base strip: `HireHouse · a product of Elyts` · markets (UAE · India) · wordmark right-aligned (deck footer outdent).
+- Base strip: `HireHouse · a product of Roni Analytics` · markets (UAE · India) · wordmark right-aligned (deck footer outdent).
 
 ## 3. Per-page archetype + ground plan
 
@@ -52,7 +52,7 @@ Each page is a vertical sequence of section archetypes (see [04](04-SECTION-LIBR
 | `/institutions` | Hero-A·white (lilac accent) → Batch problem-C·grey → Readiness scale-J·white → MockHouse B2B-I·grey → Cohort reports-D·white (lilac panel) → **Book-a-demo-B·blue** → FAQ-K·white |
 | `/mockhouse` | Hero-A·black → How-it-works-C·white → B2C/Institution split-L·grey → Score+feedback-D·white (lilac panel) → Bridge-to-live-app-B·blue → FAQ-K·white |
 | `/partners` | Hero-A·black → Why-partner-H·yellow → 3-tier ladder-J·white → Payout mechanics-D·grey → **Book-a-call-B·blue** → FAQ-K·white |
-| `/about` | Statement-A·white → What/why-C → Elyts-M·black |
+| `/about` | Statement-A·white → What/why-C → Roni Analytics-M·black |
 | `/contact` | Split-D·white (routes: candidate / company / institution / partner / press) |
 | legal | Long-form-M·white, single content column, hairline section rules |
 

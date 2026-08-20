@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "Fast Track",
   ],
   applicationName: SITE.name,
-  authors: [{ name: SITE.parent, url: SITE.parentUrl }],
+  authors: [{ name: SITE.parent }],
   openGraph: {
     title: "HireHouse — Hiring, decided on merit.",
     description: "The top of the funnel, handled. Free for companies, fair for candidates.",

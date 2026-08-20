@@ -165,5 +165,5 @@ Funnel instrumentation matches CLAUDE.md §11. No PII in event props. Consent-ga
 
 - `buildMetadata()` per route: title, description, canonical, OG/Twitter. Per-audience OG images (generated via `opengraph-image.tsx` using the same type system).
 - `sitemap.ts` enumerates all routes + job detail pages; `robots.ts` allows all, points to sitemap.
-- JSON-LD: `Organization` (Elyts/HireHouse) site-wide; `JobPosting` on `/jobs/[id]`; `FAQPage` on pages with FAQ sections.
+- JSON-LD: `Organization` (Roni Analytics/HireHouse) site-wide; `JobPosting` on `/jobs/[id]`; `FAQPage` on pages with FAQ sections.
 - One `<h1>` = the page's headline sentence; semantic section headings throughout.

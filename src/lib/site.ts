@@ -4,8 +4,7 @@ export type Audience = "candidate" | "employer" | "institution" | "partner";
 
 export const SITE = {
   name: "HireHouse",
-  parent: "Elyts",
-  parentUrl: "https://elyts.in",
+  parent: "Roni Analytics",
   markets: "UAE · India",
   tagline: "Hiring, decided on merit.",
 };
@@ -54,7 +53,6 @@ export const FOOTER = [
       { label: "Blog", href: "/blog" },
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
-      { label: "Elyts", href: "https://elyts.in" },
     ],
   },
   {

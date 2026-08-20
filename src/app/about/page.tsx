@@ -6,7 +6,7 @@ import type { Section } from "@/content/types";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "HireHouse is a merit-first hiring marketplace built by Elyts for the UAE and India. A fair, fast way for candidates to be seen and for companies to hire.",
+    "HireHouse is a merit-first hiring marketplace built by Roni Analytics for the UAE and India. A fair, fast way for candidates to be seen and for companies to hire.",
 };
 
 /** About — company. Data-driven Section[] rendered via the archetype library.
