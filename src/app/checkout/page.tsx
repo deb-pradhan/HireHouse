@@ -6,6 +6,8 @@ import { Section, ChipRow, Title, Lead, Cta, Caption } from "@/components/primit
  *  Kept honest and non-indexed so the Fast Track CTA never dead-ends. */
 export const metadata: Metadata = {
   title: "Checkout",
+  description:
+    "Continue to Fast Track checkout. Fast Track is an optional priority service, and applying to any role stays free.",
   robots: { index: false, follow: true },
 };
 

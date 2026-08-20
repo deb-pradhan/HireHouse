@@ -27,6 +27,7 @@ export const NAV = [
   { label: "For institutions", href: "/institutions" },
   { label: "MockHouse", href: "/mockhouse" },
   { label: "Partners", href: "/partners" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export const FOOTER = [
@@ -50,6 +51,7 @@ export const FOOTER = [
   {
     title: "Company",
     links: [
+      { label: "Blog", href: "/blog" },
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
       { label: "Elyts", href: "https://elyts.in" },

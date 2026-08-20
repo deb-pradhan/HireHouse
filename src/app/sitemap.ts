@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getJobs } from "@/lib/jobs/source";
+import { getPosts } from "@/lib/blog/source";
 
 const BASE = "https://hirehouse.xyz";
 
@@ -14,6 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/institutions",
     "/mockhouse",
     "/partners",
+    "/blog",
     "/about",
     "/contact",
     "/privacy",
@@ -34,5 +36,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...jobEntries];
+  const posts = await getPosts();
+  const postEntries: MetadataRoute.Sitemap = posts.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: p.publishedAt,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...jobEntries, ...postEntries];
 }

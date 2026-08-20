@@ -24,11 +24,32 @@ export const metadata: Metadata = {
   },
   description:
     "HireHouse reads every application on merit, runs a structured interview, and hands companies a shortlist. Free for companies. A fair, fast way for candidates to be seen.",
+  keywords: [
+    "hiring",
+    "recruitment",
+    "AI hiring",
+    "job search",
+    "interview prep",
+    "shortlist",
+    "UAE jobs",
+    "India jobs",
+    "MockHouse",
+    "Fast Track",
+  ],
+  applicationName: SITE.name,
+  authors: [{ name: SITE.parent, url: SITE.parentUrl }],
   openGraph: {
     title: "HireHouse — Hiring, decided on merit.",
     description: "The top of the funnel, handled. Free for companies, fair for candidates.",
     type: "website",
     siteName: SITE.name,
+    url: "https://hirehouse.xyz",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HireHouse — Hiring, decided on merit.",
+    description: "The top of the funnel, handled. Free for companies, fair for candidates.",
   },
 };
 

@@ -32,6 +32,19 @@ The site is feature-complete. Remaining is external/ops work, not build work:
   - [x] **Analytics** — typed events (`src/lib/analytics/events.ts`), consent-gated `track()`, `<Analytics>` (page views + `[data-track]` delegation; `Cta` self-stamps its label), privacy-first `<ConsentBanner>` (localStorage via `useSyncExternalStore`). Nothing fires before consent.
   - [x] **a11y pass** — DOM-verified across form/interactive pages: one h1 each, full landmarks, all inputs labeled, named controls, logical heading order, `aria-expanded` on mobile menu, skip-link + focus-visible + reduced-motion global, palette-enforced AA text. (Real Lighthouse run belongs in CI.)
 
+## Blog (docs/07-BLOG-CMS.md)
+
+Job-market blog, Editorial Brutalist. Content authored in Payload CMS (separate Railway service); the site reads it via a data seam (fixtures now → Payload REST when `PAYLOAD_API_URL` is set).
+
+- **Routes:** `/blog` (featured + category filter + grid), `/blog/[slug]` (reading-progress bar, sticky TOC, `ShareBar` X/LinkedIn/copy, related posts, `BlogPosting` JSON-LD), `/blog/[slug]/opengraph-image` (per-post OG in category color), `/blog/rss.xml`.
+- **Lib:** `src/lib/blog/` — `types.ts`, `source.ts` (seam, ISR 5-min), `fixtures.ts` (5 posts), `format.ts` (reading time/date/TOC), `lexical.ts` (Payload Lexical → portable `Block[]`).
+- **Components:** `src/components/blog/` — `RichText`, `PostCard` (type-as-cover), `PostMeta`, `ShareBar`, `ReadingProgress`, `CategoryFilter`. Article prose styles in `globals.css` (`.t-article`, `.t-lead-article`).
+- **Wiring:** sitemap + nav + footer include the blog; `.env.example` documents `PAYLOAD_API_URL`.
+- **Verified:** build + lint clean; `/blog`, article, RSS, JSON-LD, `og:type=article` confirmed via server-render (browser preview was policy-blocked).
+- **19 posts** in `src/lib/blog/` (12 in `fixtures.ts` + 7 one-per-file in `posts/`, aggregated via `posts/index.ts`), each with a verified Unsplash cover image.
+- **Covers → CMS:** `scripts/seed-blog.ts` downloads each cover and uploads it to Payload `media`, sets `heroImage` + `meta.image`; the adapter absolutizes the CMS media URL. It also works around the template's Search-plugin publish-rollback (clear `search` + a republish sweep) — see `scripts/payload-fix/` for the diagnosis (the clean fix, removing `posts` from `searchPlugin`, needs CMS source access; the CMS service has no connected repo, so the seeder-side workaround is used).
+- **CMS deployed:** "Payload CMS V3 (website builder)" template live on Railway — admin `https://payload-cms-production-25bc.up.railway.app/admin`, Postgres provisioned, `PAYLOAD_API_URL` set on the `web` service. `source.ts` mapped to the template's `Posts` schema. **Go-live steps** (create admin user, name categories to match, publish posts, deploy this frontend to the `web` GitHub repo) in docs/07 §0.
+
 ## Recent design fixes
 
 - **Headline measure (all pages).** Section-headline width caps were `max-w-[Nch]` on wrapper `div`s, so `ch` was measured against the inherited 16px body size — roughly halving the intended width and wrapping big headlines into 5–6 skinny lines. Converted every headline wrapper to `rem`-based caps (full-width archetypes ~42–54rem; column archetypes FeatureI ~34rem, TiersJ ~26rem; job/checkout/contact heads ~42–48rem). Sublines stayed `ch` (correct — they sit on the text element at body size). Fix is in the shared components, so it applies uniformly everywhere. **Rule for future:** set headline caps in `rem`, never `ch` on a wrapper div.

@@ -7,7 +7,7 @@ import type { Section } from "@/content/types";
 export const metadata = {
   title: "Partners",
   description:
-    "Refer companies and candidates to HireHouse and earn a share of the revenue you bring in.",
+    "Turn your network into a revenue line. Refer companies and candidates to HireHouse and earn a share across three partner tiers. Free to join, with clear payouts.",
 };
 
 export default function Page() {

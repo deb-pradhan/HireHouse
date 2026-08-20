@@ -7,7 +7,7 @@ import type { Section } from "@/content/types";
 export const metadata = {
   title: "Fast Track",
   description:
-    "An optional priority review of your application: reviewed in 72 hours or refunded, with a free path always open.",
+    "Fast Track is an optional priority review of your job application: reviewed in 72 hours or your fee back, with mock prep, written feedback, and a free path always open.",
 };
 
 export default function Page() {
